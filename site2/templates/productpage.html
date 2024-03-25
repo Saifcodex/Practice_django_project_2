@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color:silver ">
+<h1 style="background-color:wheat"> This is Our Product Page Where you can See, Add , Update and Delete any Product</h1><br><br>
+
+    {% for i in product %}
+<h1>
+    {{ i.name }}<br>
+    {{ i.price }}<br>
+    <a href="{% url 'update-product' i.id %}">Update Product</a><br><br>
+    <a href="{% url 'delete-product' i.id %}">Delete Product</a><br><br>
+</h1>
+    {% endfor %}
+
+<h2>
+    <a href="{% url 'add-product' %}">Add Product</a><br><br>
+    <a href="{% url 'home' %}">Previous Page</a>
+</h2>
+
+</body>
+</html>
